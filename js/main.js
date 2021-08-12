@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    const audio = new Audio("./sound/sound.mp3");
+    audio.play();
     // process bar
     setTimeout(function() {
         firstQuestion();
@@ -7,8 +9,10 @@ $(document).ready(function() {
         $('body').delay(350).css({
             'overflow': 'visible'
         });
-    }, 600);
+        
+    }, 5000);
 })
+
 
 function init(){
     $('#title').text(CONFIG.title)
@@ -16,21 +20,19 @@ function init(){
     $('#yes').text(CONFIG.btnYes)
     $('#no').text(CONFIG.btnNo)
 }
-
+init()
 function firstQuestion(){
     $('.content1').hide();
     Swal.fire({
         title: CONFIG.introTitle,
         text: CONFIG.introDesc,
         imageUrl: 'img/lookMe2.webp',
-        // imageUrl: 'img/lookMe.jpg',
         imageWidth: 300,
         imageHeight: 300,
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'Custom image',
         confirmButtonText: CONFIG.btnIntro
       }).then(function(){
-        // $('.content1').show(200);
         Swal.fire({
             title: '(◡‿◡✿)',
             text: '1 năm có 365 ngày và hành trình 365 ngày đó chắc hẳn có một ngày vui đặc biệt cho mỗi con người chúng ta. Ngày hôm nay chính là ngày vui đặc biệt cho bé Ngọc, bởi bé Ngọc sẽ đón nhận thêm một tuổi mới, niềm vui mới.',
@@ -93,7 +95,7 @@ function moveButton() {
     $('#no').css("top", top);
 }
 
-init()
+// init()
 
 var n = 0;
 $('#no').mousemove(function() {
