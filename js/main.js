@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('body').delay(350).css({
             'overflow': 'visible'
         });
-    }, 600);
+    }, 6000);
 })
 
 function init(){

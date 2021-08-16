@@ -16,6 +16,7 @@
     <div class="wrapper">
       <!-- Preloader -->
     <div id="preloader">
+      <button id="start" type="button" class="btn btn-info btn-lg" style="position: absolute;top:50%;left:70%">Click me</button>
       <div class="spinner">
         <div class="rect1"></div>
         <div class="rect2"></div>
@@ -34,7 +35,10 @@
         <button id="no" type="button" class="btn btn-info btn-lg"></button>
       </div>
     </div>
-    <audio src="./sound/sound.mp3" autoplay></audio>
+    <!-- <audio src="./sound/sound.mp3" autoplay></audio> -->
+    <audio onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)">
+      <source src="./sound/sound.mp3" type="audio/mp3" />
+    </audio>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
